@@ -1,0 +1,144 @@
+/* SI EXISTE USUARIO */
+.header__datos-container {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    background-color: var(--header-color-mobile);
+    color: var(--white-color);
+}
+
+.datos__p {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}
+
+.header__cart {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    font-size: 1.6rem;
+}
+.a-svg {
+    margin: 0 .4rem;
+    color: var(--white-color);
+    width: 25px;
+}
+.svg-cart-counter {
+    color: var(--white-color);
+    width: 25px;
+}
+.a-svg:hover {
+    width: 24px;
+    color:var(--orange-color);
+}
+
+.datos__btn {
+    /* height: 22px; */
+    padding: .3rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--white-color);
+    cursor: pointer;
+    border: solid 1px var(--white-color);
+}
+
+.datos__btn:hover {
+    color: red;
+    background-color: #000;
+    border-color: red;
+}
+/* SI NO EXISTE USUARIO */
+
+.header__datos-loginout{
+    color: var(--white-color);
+    border: solid 1px var(--orange-color);
+    padding: 0 1rem;
+    border-radius: 20px;
+}
+.header__datos-loginout:hover{
+    color: var(--orange-color);
+}
+
+/* NORMAL */
+.header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--header-color-mobile);
+    z-index: 900;
+}
+.h1{
+    display: none;
+}
+.h1__a {
+    font-size: 2.1rem;
+    /* line-height: 1px; */
+    /* letter-spacing: 4px; */
+    font-weight: 200;
+}
+
+.header__img-container{
+    width: 70px;
+    height: 100%;
+    display:inline-block;
+}
+
+.header__img {
+    width: inherit; 
+}
+
+.navHeader {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: calc(100% - 70px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translate(-100%,0);
+    transition: transform 0.5s ease;
+    background-color: var(--primary-color);
+}
+
+.navHeader__a {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+    color: var(--second-color);
+}
+
+.nav__img {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--white-color);
+}
+
+.navHeader-active {
+    transform: translate(0%,0);   
+}
+
+.navHeader__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    border: none;
+    outline: none;
+}

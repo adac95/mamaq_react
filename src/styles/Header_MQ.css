@@ -1,0 +1,41 @@
+@media screen and (min-width: 426px) {
+    .header {
+        position: relative;
+        top: 0;
+        display: flex;
+        height: 100px;
+        justify-content: space-between;
+        background-color: var(--primary-color);
+    }
+    .header__logo-container{
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    }
+    .header__img-container {
+        width: 90px;
+    }
+    .navHeader {
+        position: static;
+        height: 100%;
+        flex-direction: initial;
+        align-items: center;
+        justify-content: flex-end;
+        transform: none;
+        transition: none;
+        background-color: transparent;
+    }
+    .navHeader__a{
+        width: unset;
+        height: auto;
+        padding: 0 1rem;
+        border-left: 1px solid var(--second-color);
+    }
+    .navHeader__a:first-child {
+        border-left: none;
+    }
+    .navHeader__btn{
+        display: none;
+    }
+}
