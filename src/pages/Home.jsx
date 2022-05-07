@@ -1,5 +1,4 @@
 import React from "react";
-
 import Slider from "../components/home/Slider";
 import Options from "../components/home/Options";
 import Propuesta from "../components/home/Propuesta";

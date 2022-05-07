@@ -8,7 +8,7 @@ const ReservasForm = () => {
         Separa el día de tu visita, no olvides que nuestro aforo es limitado 😉
       </p>
       <div className='reserva__form-div'>
-        <label className='reserva__label' for='fecha'>
+        <label className='reserva__label' htmlFor='fecha'>
           📅 Fecha
         </label>
         <input
@@ -18,7 +18,7 @@ const ReservasForm = () => {
           id='fecha'
           required
         />
-        <label className='reserva__label' for='clientes'>
+        <label className='reserva__label' htmlFor='clientes'>
           🙍 Nro de clientes
         </label>
         <input
@@ -28,15 +28,15 @@ const ReservasForm = () => {
           id='clientes'
           required
         />
-        <label className='reserva__label' for='hora'>
+        <label className='reserva__label' htmlFor='hora'>
           🕐 Hora
         </label>
         <input className='reserva__input' type='time' id='hora' required />
-        <label className='reserva__label' for='nombre'>
+        <label className='reserva__label' htmlFor='nombre'>
           Nombre*
         </label>
         <input className='reserva__input' type='text' id='nombre' required />
-        <label className='reserva__label' for='email'>
+        <label className='reserva__label' htmlFor='email'>
           Email*
         </label>
         <input
@@ -45,7 +45,7 @@ const ReservasForm = () => {
           name='email'
           id='email'
         />
-        <label className='reserva__label' for='telf'>
+        <label className='reserva__label' htmlFor='telf'>
           Teléfono*
         </label>
         <input
@@ -55,7 +55,7 @@ const ReservasForm = () => {
           id='tefl'
           required
         />
-        <label className='reserva__label' for='mensaje'>
+        <label className='reserva__label' htmlFor='mensaje'>
           Mensaje*
         </label>
         <input className='reserva__input' type='text' name='' id='' />
