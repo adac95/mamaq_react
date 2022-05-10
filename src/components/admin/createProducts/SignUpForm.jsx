@@ -28,6 +28,13 @@ export function SignUpForm() {
         roles,
       };
       setErrorMsg(null);
+      document.cookie = `user=${JSON.stringify({
+        id,
+        email,
+        username,
+        roles,
+      })}`;
+      document.cookie = `token=${token}`;
       dispatch(setUser(userData));
     } catch (error) {
       console.log(error);

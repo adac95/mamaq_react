@@ -1,4 +1,4 @@
-import { SET_EDIT_INPUT_VALUE, SET_EDIT_PRODUCTS_BTN, SET_PRODUCTS, SET_RESERVASMAP, SET_USER } from "./types"
+import { SET_CART, SET_CART_COUNTER, SET_EDIT_INPUT_VALUE, SET_EDIT_PRODUCTS_BTN, SET_PRODUCTS, SET_RESERVASMAP, SET_USER } from "./types"
 
 export const setProducts = (payload) => ({
     type: SET_PRODUCTS,
@@ -22,5 +22,15 @@ export const setEditInputValue = (payload) => ({
 
 export const setUser = (payload) => ({
     type: SET_USER,
+    payload
+})
+
+export const setCart =(payload) => ({
+    type: SET_CART,
+    payload
+})
+
+export const setCartCounter = (payload) => ({
+    type: SET_CART_COUNTER,
     payload
 })

@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { API_URL } from "../../../variables";
-import { setUser } from "../../../actions";
+import { setCart, setUser } from "../../../actions";
 import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
+import { getCartByUser } from "../../../api/getCartByUser";
 
 const urlApi = `${API_URL}/api/auth/sign-in`;
 export const SigninForm = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
-
+  
   const setUserWithToken = async (data) => {
     try {
       const { id, email, token, username, roles } = await data;
@@ -26,11 +27,30 @@ export const SigninForm = () => {
         roles,
       };
       setErrorMsg(null);
-      dispatch(setUser(userData));
+      document.cookie = `user=${JSON.stringify({
+        id,
+        email,
+        username,
+        roles,
+      })}`;
+      document.cookie = `token=${token}`
+      dispatch(setUser(userData))
+      return 
     } catch (error) {
       console.log(error);
     }
   };
+//   useEffect(()=>{
+//     fetch(`${API_URL}/api/shoppingcart/${user.id}`, {
+//       method: "GET",
+//       headers: {
+//         "Content-type": "application/json; charset=utf-8",
+//         "x-access-token": user.token,
+//       },
+//     }).then(res=> res.json()).then(data => dispatch(setCart(data))).catch(error=>{
+//     console.log(error);
+//   })
+// },[setUserWithToken])
 
   return (
     <section className='signin-section'>

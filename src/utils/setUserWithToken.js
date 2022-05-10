@@ -2,26 +2,28 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../actions";
 
-export const useSetUserWithToken = async (token) => {
+// AUN NO LOGRO HACER QUE FUNCIONE EN SIGNIN Y SIGNUP FORMS
+
+export const setUserWithToken = async (data) => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
   try {
-    const res = await token;
-    const { error, body } = await res;
-    if (error) {
-      setErrorMsg(error);
+    const { id, email, token, username, roles } = await data;
+    if (!id) {
       dispatch(setUser({}));
-      return error;
+      setErrorMsg(await data);
+      return data;
     }
     const userData = {
-      id: body.user.id,
-      username: body.user.username,
-      email: body.user.email,
-      token: body.user.token,
+      id,
+      username,
+      email,
+      token,
+      roles,
     };
+    document.cookie = `token=${token}`
     setErrorMsg(null);
     dispatch(setUser(userData));
-    return errorMsg
   } catch (error) {
     console.log(error);
   }

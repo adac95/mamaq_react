@@ -10,6 +10,7 @@ import "../styles/Home.css";
 import "../styles/Home_MQ.css";
 
 const Home = () => {
+
   return (
     <div className='Home'>
       <section id='inicio' className='slider-section'>

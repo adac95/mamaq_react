@@ -1,17 +1,23 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import { API_URL } from "../variables";
-import { setUser } from "../actions";
+import { setCart, setUser } from "../actions";
 
 import "../styles/UserNavHeader.css";
+import { deleteCookie } from "../utils/deleteCookie";
 
 export const UserNavHeader = ({ user }) => {
   const dispatch = useDispatch();
+  const cartCounter = useSelector((state) => state.cartCounter);
+
+
 
   const logoutHandle = async () => {
     try {
       dispatch(setUser({}));
+      deleteCookie("token");
+      deleteCookie("user");
+      dispatch(setCart({}));
     } catch (err) {
       let message = err.statusText || "Ocurrió un error al elimnar los datos";
       console.log(err);
@@ -67,7 +73,7 @@ export const UserNavHeader = ({ user }) => {
           className='a a-svg a-cart-counter'
           to='/cart'
         >
-          a
+         {cartCounter && cartCounter}
         </Link>
       </div>
       <p className='a btn datos__btn' onClick={logoutHandle}>
