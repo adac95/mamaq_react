@@ -43,14 +43,18 @@ function App() {
           <Route exact path='/reservas' component={Reservas} />
           <Route exact path='/carta' component={Carta} />
           <Route exact path='/cart' component={Cart} />
-          <Route exact path='/create-products' component={CreateProducts}>
-            {!user.id && <Redirect to='/login' />}
-          </Route>
           <Route exact path='/login' component={Login}>
             {user.id && <Redirect to='/' />}
           </Route>
           {user.id && user.roles[0].name === "admin" && (
-            <Route exact path='/admin' component={AdminHome} />
+            <>
+              <Route exact path='/admin' component={AdminHome} />
+              <Route
+                exact
+                path='/admin/create-products'
+                component={CreateProducts}
+              />
+            </>
           )}
           <Route component={NotFound} />
         </Switch>
