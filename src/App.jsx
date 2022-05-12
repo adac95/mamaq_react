@@ -13,14 +13,13 @@ import { CreateProducts } from "./pages/admin/CreateProducts";
 import { Cart } from "./pages/Cart";
 import { AdminHome } from "./pages/admin/AdminHome";
 import { useDispatch } from "react-redux";
-import { setCart, setCartCounter, setProducts } from "./actions";
+import { setCart, setProducts } from "./actions";
 import GetProducts from "./api/getProducts";
 import Login from "./pages/Login";
 import { getCartByUser } from "./api/getCartByUser";
 
 function App() {
   const user = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     GetProducts().then((res) => {

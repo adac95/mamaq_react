@@ -1,6 +1,8 @@
 import React from "react";
+import "../../styles/Cart.css";
+import { BtnToPatchProductOfCart } from "./BtnToPatchProductOfCart";
 
-export const ProductOfCart = (product) => {
+export const ProductOfCart = ({ product }) => {
   return (
     <div className='cart__product-container'>
       <img
@@ -14,30 +16,21 @@ export const ProductOfCart = (product) => {
         <p className='p cart__product-price'>
           Precio por unidad: {product.price} soles
         </p>
-        <button
-          className='cartLessBtn btn cart__product-btn cart__product-btn--less'
-          data-productId='<%= product.productId %>'
-          data-userId='<%= user._id %>'
-          data-products_id='<%= product._id %>'
-          data-productname='<%= product.productName %>'
-          data-productPrice='<%= product.price %>'
-          data-productCantidad='<%= product.cantidad %>'
-          data-productimagenpath='<%= product.productImagenPath %>'
-        >
-          -
-        </button>
+        <BtnToPatchProductOfCart
+          className={
+            "'cartLessBtn btn cart__product-btn cart__product-btn--less'"
+          }
+          content={"-"}
+          product={product}
+        />
         <span className='cart__product-cantidad'>{product.cantidad}</span>
-        <button
-          className='cartAddBtn btn cart__product-btn cart__product-btn--add'
-          data-productId='<%= product.productId %>'
-          data-userId='<%= user._id %>'
-          data-productname='<%= product.productName %>'
-          data-productPrice='<%= product.price %>'
-          data-productCantidad='<%= product.cantidad %>'
-          data-productimagenpath='<%= product.productImagenPath %>'
-        >
-          +
-        </button>
+        <BtnToPatchProductOfCart
+          className={
+            "'cartAddBtn btn cart__product-btn cart__product-btn--add'"
+          }
+          content={"+"}
+          product={product}
+        />
         <p className='p cart__product-total'>
           Total:
           {parseFloat(product.cantidad) * parseFloat(product.price)} soles{" "}

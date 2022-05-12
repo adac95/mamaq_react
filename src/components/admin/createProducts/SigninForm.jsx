@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { API_URL } from "../../../variables";
-import { setCart, setUser } from "../../../actions";
+import { setUser } from "../../../actions";
 import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
-import { getCartByUser } from "../../../api/getCartByUser";
+import { SetUserAndToken } from "../../../hooks/SetUserAndToken";
+
+
 
 const urlApi = `${API_URL}/api/auth/sign-in`;
+
 export const SigninForm = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
-  
+
+    // const handleForm = async (e) => {
+    //   const data = await postForm(e, urlApi)
+    //   console.log(data);
+    //   const res= await SetUserAndToken(data, setErrorMsg, setUser)
+    //   console.log(res);
+
+    // }
+
   const setUserWithToken = async (data) => {
     try {
       const { id, email, token, username, roles } = await data;
@@ -33,32 +44,24 @@ export const SigninForm = () => {
         username,
         roles,
       })}`;
-      document.cookie = `token=${token}`
-      dispatch(setUser(userData))
-      return 
+      document.cookie = `token=${token}`;
+      dispatch(setUser(userData));
+      return;
     } catch (error) {
       console.log(error);
     }
   };
-//   useEffect(()=>{
-//     fetch(`${API_URL}/api/shoppingcart/${user.id}`, {
-//       method: "GET",
-//       headers: {
-//         "Content-type": "application/json; charset=utf-8",
-//         "x-access-token": user.token,
-//       },
-//     }).then(res=> res.json()).then(data => dispatch(setCart(data))).catch(error=>{
-//     console.log(error);
-//   })
-// },[setUserWithToken])
 
   return (
     <section className='signin-section'>
       {errorMsg && <MessageError text={errorMsg} />}
+      
+
       <form
         id='signinForm'
         className='container mt-5'
         onSubmit={(e) => {
+          // SetUserAndToken(postForm(e, urlApi),setErrorMsg, setUser)
           setUserWithToken(postForm(e, urlApi));
         }}
       >

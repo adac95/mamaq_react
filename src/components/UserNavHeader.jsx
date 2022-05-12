@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCart, setUser } from "../actions";
@@ -76,9 +76,9 @@ export const UserNavHeader = ({ user }) => {
          {cartCounter && cartCounter}
         </Link>
       </div>
-      <p className='a btn datos__btn' onClick={logoutHandle}>
+      <Link to='/login' className='a btn datos__btn' onClick={logoutHandle}>
         Cerrar sesión
-      </p>
+      </Link>
     </div>
   ) : (
     <div className='header__datos-container'>
