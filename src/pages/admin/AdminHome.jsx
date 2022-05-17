@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function AdminHome() {
   return (
@@ -6,31 +7,29 @@ export function AdminHome() {
       <div className='main__options-container'>
         <div className='main__option'>
           <p className='p option__p'>Actualizar la carta</p>
-          <a
-            href='/admin/create-products'
+          <Link
+            to='/admin/create-products'
             id='goToCreateProductsLink'
             className='a option__btn btn-warning'
           >
             Click aquí
-          </a>
+          </Link>
         </div>
         <div className='main__option'>
           <p className='p option__p'>Crear nuevos usuarios</p>
-          <a href='/admin/create-users' className='a option__btn btn-warning'>
+          <Link to='/admin/create-users' className='a option__btn btn-warning'>
             Click aquí
-          </a>
+          </Link>
         </div>
       </div>
       <span id='signinForm'></span>
       <span id='signupForm'></span>
       <div className='main__option'>
         <p className='p option__p'>Ir a la pagina de Mamaq</p>
-        <a href='/' className='a option__btn btn-warning'>
+        <Link to='/' className='a option__btn btn-warning'>
           Click aquí
-        </a>
+        </Link>
       </div>
     </div>
   );
 }
-
-

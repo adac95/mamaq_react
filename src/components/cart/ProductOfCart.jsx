@@ -1,13 +1,15 @@
 import React from "react";
 import "../../styles/Cart.css";
+import { API_URL } from "../../variables";
 import { BtnToPatchProductOfCart } from "./BtnToPatchProductOfCart";
 
 export const ProductOfCart = ({ product }) => {
+  console.log(`http://mamaq.herokuapp.com/${product.productImagenPath}`);
   return (
     <div className='cart__product-container'>
       <img
         className='cart__product-img'
-        src={`mamaq.herokuapp.com/${product.productImagenPath}`}
+        src={  `http://mamaq.herokuapp.com/${product.productImagenPath}` !== "http://mamaq.herokuapp.com/undefined" ? `http://mamaq.herokuapp.com/${product.productImagenPath}` : `${API_URL}/${product.productImagenPath}`}
         alt={`imagen del producto ${product.productName}`}
       />
       {/* SEPARACION IMG Y DETALLES */}
@@ -18,7 +20,7 @@ export const ProductOfCart = ({ product }) => {
         </p>
         <BtnToPatchProductOfCart
           className={
-            "'cartLessBtn btn cart__product-btn cart__product-btn--less'"
+            "cartLessBtn btn cart__product-btn cart__product-btn--less"
           }
           content={"-"}
           product={product}
@@ -26,7 +28,7 @@ export const ProductOfCart = ({ product }) => {
         <span className='cart__product-cantidad'>{product.cantidad}</span>
         <BtnToPatchProductOfCart
           className={
-            "'cartAddBtn btn cart__product-btn cart__product-btn--add'"
+            "cartAddBtn btn cart__product-btn cart__product-btn--add"
           }
           content={"+"}
           product={product}

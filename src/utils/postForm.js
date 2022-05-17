@@ -1,10 +1,13 @@
-export const postForm = async (e, url) => {
+export const postForm = async (e, url,token) => {
   e.preventDefault();
   try {
     const formData = new FormData(e.target);
     const options = {
       method: "POST",
       body: formData,
+      headers: {
+        "x-access-token": token ? token : null
+      }
     };
     let res = await fetch(url, options);
 

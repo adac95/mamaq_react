@@ -14,13 +14,6 @@ export const SigninForm = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
 
-    // const handleForm = async (e) => {
-    //   const data = await postForm(e, urlApi)
-    //   console.log(data);
-    //   const res= await SetUserAndToken(data, setErrorMsg, setUser)
-    //   console.log(res);
-
-    // }
 
   const setUserWithToken = async (data) => {
     try {
@@ -60,9 +53,8 @@ export const SigninForm = () => {
       <form
         id='signinForm'
         className='container mt-5'
-        onSubmit={(e) => {
-          // SetUserAndToken(postForm(e, urlApi),setErrorMsg, setUser)
-          setUserWithToken(postForm(e, urlApi));
+        onSubmit={ async(e) => {
+         await setUserWithToken(postForm(e, urlApi));
         }}
       >
         <div className='align-items-center container-sm fs-5'>

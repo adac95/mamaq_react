@@ -1,8 +1,26 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { postForm } from "../../../utils/postForm";
+import { API_URL } from "../../../variables";
+import { setProducts } from "../../../actions";
 
 export function CreateProductsForm() {
+  const apiProducts = `${API_URL}/api/products`;
+  const user = useSelector((state) => state.user);
+  const products = useSelector((state) => state.listProducts);
+  const dispatch = useDispatch();
+
   return (
-    <form className='create-item__form' id='createForm'>
+    <form
+      className='create-item__form'
+      id='createForm'
+      onSubmit={async (e) => {
+        const newProduct = await postForm(e, apiProducts, user.token);
+        const updateArrayOfProducts = [...products];
+        updateArrayOfProducts.push(newProduct.body);
+        dispatch(setProducts(updateArrayOfProducts));
+      }}
+    >
       <label className='form__label' htmlFor='name'>
         Nombre
         <input

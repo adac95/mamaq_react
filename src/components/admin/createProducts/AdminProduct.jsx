@@ -1,10 +1,19 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setEditInputValue, setEditProductsBtn } from "../../../actions";
+import {
+  setEditInputValue,
+  setEditProductsBtn,
+  setProducts,
+} from "../../../actions";
+import { patchProducts } from "../../../api/patchProducts";
+import { deleteProduct } from "../../../api/deleteProduct";
+import { API_URL } from "../../../variables";
 
 export default function AdminProduct({ product, id }) {
   const editProductsBtn = useSelector((state) => state.editProductsBtn);
   const editInputValue = useSelector((state) => state.editInputValue);
+  const products = useSelector((state) => state.listProducts);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const deleteRefBtn = useRef();
   const confirmRefBtn = useRef();
@@ -25,25 +34,50 @@ export default function AdminProduct({ product, id }) {
         price: product.price,
         category: product.category,
         description: product.description,
+        image: product.image || null,
       })
     );
     e.target.textContent = "Confirmar";
     deleteRefBtn.current.textContent = "Cancelar";
+    return;
   };
-  const confirmHandle = (e) => {
-    if (e.target.textContent === "Confirmar") {
-      console.log("Enviar DATOS");
-    }
+
+  const confirmHandle = async (e) => {
+    const res = await patchProducts(
+      API_URL,
+      user.token,
+      editInputValue,
+      editInputValue.id
+    );
+    // sustituyendo el producto antiguo con el nuevo para hacer dispatch y no se pise por la "key"
+    const patchedProduct = products.find((e) => e._id === res.body._id);
+    const newArrayOfProducts = [...products].filter(
+      (el) => el !== patchedProduct
+    );
+    newArrayOfProducts.push(res.body);
+
+    dispatch(setProducts(newArrayOfProducts));
+    dispatch(setEditProductsBtn(false));
+    e.target.textContent = "Editar";
+    deleteRefBtn.current.textContent = "Eliminar";
+    return;
   };
 
   const cancelEditHandle = (e) => {
-    if (e.target.textContent === "Cancelar") {
-      dispatch(setEditProductsBtn({ id: "", isTrue: false }));
-      dispatch(setEditInputValue({}));
-      confirmRefBtn.current.textContent = "Editar";
-      e.target.textContent = "Eliminar";
-      return;
-    }
+    dispatch(setEditProductsBtn({ id: "", isTrue: false }));
+    dispatch(setEditInputValue({}));
+    confirmRefBtn.current.textContent = "Editar";
+    e.target.textContent = "Eliminar";
+    return;
+  };
+
+  const deleteProductAskHandle = (e) => {
+    confirmRefBtn.current.textContent = "Sí, eliminar";
+    e.target.textContent = "Cancelar";
+  };
+  const deleteProductHandle = async (e) => {
+    await deleteProduct(API_URL, user.token, product._id);
+    dispatch(setProducts(products.filter((el) => el !== product)));
   };
 
   return (
@@ -131,6 +165,8 @@ export default function AdminProduct({ product, id }) {
             onClick={(e) => {
               if (e.target.textContent === "Editar") {
                 editHandle(e);
+              } else if (e.target.textContent === "Sí, eliminar") {
+                deleteProductHandle(e);
               } else {
                 confirmHandle(e);
               }
@@ -142,7 +178,11 @@ export default function AdminProduct({ product, id }) {
             className='btn item-tr__btn delete-btn'
             ref={deleteRefBtn}
             onClick={(e) => {
-              cancelEditHandle(e);
+              if (e.target.textContent === "Eliminar") {
+                deleteProductAskHandle(e);
+              } else if (e.target.textContent === "Cancelar") {
+                cancelEditHandle(e);
+              }
             }}
           >
             Eliminar
