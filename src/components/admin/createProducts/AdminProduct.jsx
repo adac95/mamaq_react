@@ -15,8 +15,13 @@ export default function AdminProduct({ product, id }) {
   const products = useSelector((state) => state.listProducts);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+
+  const imagenInput = useRef();
   const deleteRefBtn = useRef();
   const confirmRefBtn = useRef();
+
+  const formData = new FormData();
+
   const inputValueHandler = (e) => {
     dispatch(
       setEditInputValue({
@@ -25,6 +30,7 @@ export default function AdminProduct({ product, id }) {
       })
     );
   };
+
   const editHandle = (e) => {
     dispatch(setEditProductsBtn({ id: e.target.dataset.id, isTrue: true }));
     dispatch(
@@ -34,7 +40,7 @@ export default function AdminProduct({ product, id }) {
         price: product.price,
         category: product.category,
         description: product.description,
-        image: product.image || null,
+        imagen: product.imagen,
       })
     );
     e.target.textContent = "Confirmar";
@@ -43,18 +49,29 @@ export default function AdminProduct({ product, id }) {
   };
 
   const confirmHandle = async (e) => {
+
+    // poniendo todo en un formdata para que se pueda enviar la imagen
+    const info = imagenInput.current.files[0];
+    formData.append("createProductImg", info);
+    formData.append("id", editInputValue.id);
+    formData.append("name", editInputValue.name);
+    formData.append("price", editInputValue.price);
+    formData.append("category", editInputValue.category);
+    formData.append("description", editInputValue.description);
     const res = await patchProducts(
       API_URL,
       user.token,
-      editInputValue,
+      formData,
       editInputValue.id
     );
     // sustituyendo el producto antiguo con el nuevo para hacer dispatch y no se pise por la "key"
     const patchedProduct = products.find((e) => e._id === res.body._id);
-    const newArrayOfProducts = [...products].filter(
-      (el) => el !== patchedProduct
+    // encontrando el indice del producto patch para cambiarlo con la nueva respuesta
+    const indexToReplace = products.findIndex(
+      (el) => el._id === patchedProduct._id
     );
-    newArrayOfProducts.push(res.body);
+    const newArrayOfProducts = [...products];
+    newArrayOfProducts[indexToReplace] = res.body;
 
     dispatch(setProducts(newArrayOfProducts));
     dispatch(setEditProductsBtn(false));
@@ -147,12 +164,21 @@ export default function AdminProduct({ product, id }) {
       <tr className='item-tr__span item-tr__span--imagen'>
         <th className='tr-fetch__th'>Imagen</th>
         <td className='item-image'>
-          <img
-            loading='lazy'
-            className='item-image__img'
-            src={`http://mamaq.herokuapp.com/${product.imagen.path}`}
-            alt=''
-          />
+          {editProductsBtn.isTrue && editProductsBtn.id === product._id ? (
+            <input
+              ref={imagenInput}
+              className='form__input'
+              type='file'
+              name='createProductImg'
+            ></input>
+          ) : (
+            <img
+              loading='lazy'
+              className='item-image__img'
+              src={`${API_URL}/${product.imagen.path}`}
+              alt=''
+            />
+          )}
         </td>
       </tr>
       <tr className='item-tr__span'>
@@ -163,6 +189,7 @@ export default function AdminProduct({ product, id }) {
             ref={confirmRefBtn}
             className='btn item-tr__btn edit-btn'
             onClick={(e) => {
+              e.preventDefault();
               if (e.target.textContent === "Editar") {
                 editHandle(e);
               } else if (e.target.textContent === "Sí, eliminar") {
@@ -178,6 +205,7 @@ export default function AdminProduct({ product, id }) {
             className='btn item-tr__btn delete-btn'
             ref={deleteRefBtn}
             onClick={(e) => {
+              e.preventDefault();
               if (e.target.textContent === "Eliminar") {
                 deleteProductAskHandle(e);
               } else if (e.target.textContent === "Cancelar") {

@@ -1,12 +1,11 @@
-export const patchProducts = async (apiUrl, token, data, id) => {
+export const patchProducts = async (apiUrl, token, data,id) => {
   try {
     let options = {
       method: "PATCH",
       headers: {
-        "Content-type": "application/json; charset=utf-8",
         "x-access-token": token,
       },
-      body: JSON.stringify(data),
+      body: data,
     };
     let res = await fetch(`${apiUrl}/api/products/${id}`, options);
     let json = await res.json();
