@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setEditInputValue,
@@ -8,6 +8,7 @@ import {
 import { patchProducts } from "../../../api/patchProducts";
 import { deleteProduct } from "../../../api/deleteProduct";
 import { API_URL } from "../../../variables";
+import GetProducts from "../../../api/getProducts";
 
 export default function AdminProduct({ product, id }) {
   const editProductsBtn = useSelector((state) => state.editProductsBtn);
@@ -19,8 +20,6 @@ export default function AdminProduct({ product, id }) {
   const imagenInput = useRef();
   const deleteRefBtn = useRef();
   const confirmRefBtn = useRef();
-
-  const formData = new FormData();
 
   const inputValueHandler = (e) => {
     dispatch(
@@ -49,7 +48,7 @@ export default function AdminProduct({ product, id }) {
   };
 
   const confirmHandle = async (e) => {
-
+    const formData = new FormData();
     // poniendo todo en un formdata para que se pueda enviar la imagen
     const info = imagenInput.current.files[0];
     formData.append("createProductImg", info);
@@ -75,6 +74,7 @@ export default function AdminProduct({ product, id }) {
 
     dispatch(setProducts(newArrayOfProducts));
     dispatch(setEditProductsBtn(false));
+    dispatch(setEditInputValue({}));
     e.target.textContent = "Editar";
     deleteRefBtn.current.textContent = "Eliminar";
     return;

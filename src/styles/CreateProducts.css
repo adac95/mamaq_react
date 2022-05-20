@@ -3,10 +3,6 @@
 .a {
     text-decoration: none;
 }
-.btn {
-    outline: none;
-    border: none
-}
 .main {
     max-width: 2100px;
     margin: auto;

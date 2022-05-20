@@ -4,9 +4,7 @@ import { API_URL } from "../../../variables";
 import { setUser } from "../../../actions";
 import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
-import { SetUserAndToken } from "../../../hooks/SetUserAndToken";
-
-
+import { motion } from "framer-motion";
 
 const urlApi = `${API_URL}/api/auth/sign-in`;
 
@@ -14,6 +12,9 @@ export const SigninForm = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
 
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => setIsOn(!isOn);
 
   const setUserWithToken = async (data) => {
     try {
@@ -46,59 +47,51 @@ export const SigninForm = () => {
   };
 
   return (
-    <section className='signin-section'>
+    <section className='Signin-section'>
       {errorMsg && <MessageError text={errorMsg} />}
-      
 
       <form
         id='signinForm'
-        className='container mt-5'
-        onSubmit={ async(e) => {
-         await setUserWithToken(postForm(e, urlApi));
+        className='form'
+        onSubmit={async (e) => {
+          await setUserWithToken(postForm(e, urlApi));
         }}
       >
-        <div className='align-items-center container-sm fs-5'>
-          <div className='form-floating mb-2'>
-            <input
-              id='username'
-              name='username'
-              type='text'
-              className='form-control '
-              placeholder='Username'
-              required
-            />
-            <label htmlFor='username'>Username</label>
-          </div>
-          <div className='form-floating'>
-            <input
-              id='floatingPassword-signin'
-              name='password'
-              type='password'
-              className='form-control'
-              placeholder='Password'
-              required
-            />
-            <label htmlFor='password'>Contraseña</label>
-          </div>
-          <div className='form-check form-switch'>
-            <input
-              id='flexSwitchCheckDefault-signin'
-              className='form-check-input'
-              type='checkbox'
-            />
-            <label
-              className='form-check-label '
-              htmlFor='flexSwitchCheckDefault'
-            >
-              Recordarme
-            </label>
-          </div>
-          <div className='d-grid gap-2'>
-            <button id='signinBtn' className='btn btn-warning' type='submit'>
-              Iniciar sesión
-            </button>
-          </div>
+        <div className='form__textfield-div'>
+          <input
+            id='username'
+            name='username'
+            type='text'
+            className='form__text-input'
+            required
+          />
+          <label className='form__text-label' htmlFor='username'>
+            Username
+          </label>
         </div>
+        <div className='form__textfield-div'>
+          <input
+            id='floatingPassword-signin'
+            name='password'
+            type='password'
+            className='form__text-input'
+            required
+          />
+          <label htmlFor='password' className='form__text-label'>
+            Contraseña
+          </label>
+        </div>
+        <div className='form__check-div'>
+          <div className='switch' data-isOn={isOn} onClick={toggleSwitch}>
+            <motion.div className='handle' layout />
+          </div>
+          <label className='form-check-label' htmlFor='recordarme-checkbox'>
+            Recordarme
+          </label>
+        </div>
+        <button id='signinBtn' className='form__btn btn' type='submit'>
+          Iniciar sesión
+        </button>
       </form>
       <div className='forget-container'>
         <p className='p forget__p'>

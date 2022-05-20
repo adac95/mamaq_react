@@ -49,60 +49,60 @@ export function SignUpForm() {
           setUserWithToken(postForm(e, urlApi));
         }}
         id='signupForm'
-        className='container mt-5'
+        className='form'
       >
-        <div className='align-items-center container-sm fs-5'>
-          <div className='form-floating mb-2'>
-            <input
-              name='username'
-              type='text'
-              className='form-control '
-              id='floatingUsername-signup'
-              placeholder='Username'
-              required
-            />
-            <label htmlFor='username'>Username</label>
-          </div>
-          <div className='form-floating mb-2'>
-            <input
-              name='email'
-              type='text'
-              className='form-control '
-              id='floatingEmail-signup'
-              placeholder='Username'
-              required
-            />
-            <label htmlFor='floatingInput'>Email</label>
-          </div>
-          <div className='form-floating mb-2'>
-            <input
-              id='floatingPassword-signup'
-              name='password'
-              type='password'
-              className='form-control'
-              placeholder='Password'
-              required
-            />
-            <label htmlFor='floatingPassword'>Contraseña</label>
-          </div>
-          <div className='form-floating mb-3'>
-            <input
-              id='floatingPassword-repeatPassword-signup'
-              type='password'
-              name='confirmPassword'
-              className='form-control'
-              placeholder='Password'
-            />
-            <label htmlFor='confirmPassword' required>
-              Confirmar contraseña
-            </label>
-          </div>
-          <div className='d-grid gap-2'>
-            <button id='signupBtn' className='btn btn-warning' type='submit'>
-              Crear cuenta
-            </button>
-          </div>
+        <div className='form__textfield-div'>
+          <input
+            name='username'
+            type='text'
+            className='form__text-input'
+            id='floatingUsername-signup'
+            required
+          />
+          <label htmlFor='username' className='form__text-label'>
+            Username
+          </label>
         </div>
+        <div className='form__textfield-div'>
+          <input
+            name='email'
+            type='text'
+            className='form__text-input'
+            id='floatingEmail-signup'
+            required
+          />
+          <label htmlFor='floatingInput' className='form__text-label'>
+            Email
+          </label>
+        </div>
+        <div className='form__textfield-div'>
+          <input
+            id='floatingPassword-signup'
+            name='password'
+            type='password'
+            className='form__text-input'
+            required
+          />
+          <label htmlFor='floatingPassword' className='form__text-label'>
+            Contraseña
+          </label>
+        </div>
+        <div className='form__textfield-div'>
+          <input
+            id='floatingPassword-signup'
+            name='confirmPassword'
+            type='password'
+            className='form__text-input'
+            required
+          />
+          <label htmlFor='floatingPassword' className='form__text-label'>
+            Confirmar contraseña
+          </label>
+        </div>
+
+        <button id='signupBtn' className='form__btn btn' type='submit'>
+          Crear cuenta
+        </button>
       </form>
     </section>
   );

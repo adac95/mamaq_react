@@ -1,28 +1,28 @@
-/* SI EXISTE USUARIO */
+/* SI NO EXISTE USUARIO */
 .header__datos-container {
     width: 100%;
-    height: 30px;
+    padding: 5px 10px 5px 0px;
     display: flex;
     justify-content: flex-end;
+    gap: 1px;
     align-items: center;
-    padding-right: 2rem;
     background-color: var(--header-color-mobile);
     color: var(--white-color);
 }
 
 .datos__p {
-    font-size: 1.6rem;
-    margin-right: 1rem;
+    margin-right: 5px;
+    font-size: 1.5rem;
 }
 
+/* SI EXISTE USUARIO */
 .header__cart {
     display: flex;
     align-items: center;
-    margin: 0 1rem;
     font-size: 1.6rem;
 }
 .a-svg {
-    margin: 0 .4rem;
+    margin: 0 3px;
     color: var(--white-color);
     width: 25px;
 }
@@ -51,7 +51,6 @@
     background-color: #000;
     border-color: red;
 }
-/* SI NO EXISTE USUARIO */
 
 .header__datos-loginout{
     color: var(--white-color);

@@ -3,14 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCart, setUser } from "../actions";
 
-import "../styles/UserNavHeader.css";
+// import "../styles/UserNavHeader.css";
 import { deleteCookie } from "../utils/deleteCookie";
 
 export const UserNavHeader = ({ user }) => {
   const dispatch = useDispatch();
   const cartCounter = useSelector((state) => state.cartCounter);
-
-
 
   const logoutHandle = async () => {
     try {
@@ -73,11 +71,11 @@ export const UserNavHeader = ({ user }) => {
           className='a a-svg a-cart-counter'
           to='/cart'
         >
-         {cartCounter && cartCounter}
+          {cartCounter && cartCounter}
         </Link>
       </div>
       <Link to='/login' className='a btn datos__btn' onClick={logoutHandle}>
-        Cerrar sesión
+        <p>Cerrar sesión</p>
       </Link>
     </div>
   ) : (

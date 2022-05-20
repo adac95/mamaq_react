@@ -19,6 +19,7 @@ export function CreateProductsForm() {
         const updateArrayOfProducts = [...products];
         updateArrayOfProducts.push(newProduct.body);
         dispatch(setProducts(updateArrayOfProducts));
+        e.target.reset()
       }}
     >
       <label className='form__label' htmlFor='name'>
