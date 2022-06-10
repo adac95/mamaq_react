@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Cart.css";
-import { API_URL } from "../../variables";
+import { API_URL } from "../../../variables";
 import { BtnToPatchProductOfCart } from "./BtnToPatchProductOfCart";
 
 export const ProductOfCart = ({ product }) => {

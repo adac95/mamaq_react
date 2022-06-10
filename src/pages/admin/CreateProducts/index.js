@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import AdminProduct from "../../components/admin/createProducts/AdminProduct";
-import {CreateProductsForm} from "../../components/admin/createProducts/CreateProductsForm"
+import AdminProduct from "../../../components/admin/create-products/AdminProduct";
+import {CreateProductsForm} from "../../../components/admin/create-products/CreateProductsForm"
 
 import "../../styles/CreateProducts.css";
 export const CreateProducts = () => {

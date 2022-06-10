@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer"
+import Header from "../Header";
+import Footer from "../Footer"
 import { useSelector } from "react-redux";
-import { UserNavHeader } from "./UserNavHeader";
+import { UserNavHeader } from "../UserNavHeader";
 
 
 const Layout = ({ children }) => {

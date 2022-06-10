@@ -2,8 +2,8 @@ import React from "react";
 import "../styles/Reservas.css";
 import "../styles/Reservas_MQ.css";
 import ReservasHeroImage from "../assets/mamaq-salon.jpg";
-import ReservasForm from "../components/reservas/ReservasForm";
-import ReservasMap from "../components/reservas/ReservasMap";
+import ReservasForm from "../../components/reservas/ReservasForm";
+import ReservasMap from "../../components/reservas/ReservasMap";
 
 const Reservas = () => {
   return (

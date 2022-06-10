@@ -4,11 +4,11 @@ import {
   setEditInputValue,
   setEditProductsBtn,
   setProducts,
-} from "../../../actions";
-import { patchProducts } from "../../../api/patchProducts";
-import { deleteProduct } from "../../../api/deleteProduct";
-import { API_URL } from "../../../variables";
-import GetProducts from "../../../api/getProducts";
+} from "../../../../actions";
+import { patchProducts } from "../../../../api/patchProducts";
+import { deleteProduct } from "../../../../api/deleteProduct";
+import { API_URL } from "../../../../variables";
+import GetProducts from "../../../../api/getProducts";
 
 export default function AdminProduct({ product, id }) {
   const editProductsBtn = useSelector((state) => state.editProductsBtn);

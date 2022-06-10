@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { postForm } from "../../../utils/postForm";
-import { API_URL } from "../../../variables";
-import { setProducts } from "../../../actions";
+import { postForm } from "../../../../utils/postForm";
+import { API_URL } from "../../../../variables";
+import { setProducts } from "../../../../actions";
 
 export function CreateProductsForm() {
   const apiProducts = `${API_URL}/api/products`;
