@@ -8,7 +8,8 @@ import {
 import { patchProducts } from "../../../../api/patchProducts";
 import { deleteProduct } from "../../../../api/deleteProduct";
 import { API_URL } from "../../../../variables";
-import GetProducts from "../../../../api/getProducts";
+
+import "./styles.css"
 
 export default function AdminProduct({ product, id }) {
   const editProductsBtn = useSelector((state) => state.editProductsBtn);

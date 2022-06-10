@@ -1,0 +1,8 @@
+@media screen and (min-width: 426px) {
+  .home-options-figure {
+    height: 60vh;
+  }
+  .home-options__a {
+    bottom: 3rem;
+  }
+}

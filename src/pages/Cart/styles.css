@@ -1,0 +1,22 @@
+.cart-section {
+    font-size: 1.6rem;
+}
+.cart__product-checkout-a{
+    position: sticky;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    margin: 1rem auto;
+    text-align: center;
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    border-radius: 20px;
+}
+.cart__product-checkout-a:hover{
+    background-color: orange;
+    border: solid 1px black;
+    font-size: 1.7rem;
+}

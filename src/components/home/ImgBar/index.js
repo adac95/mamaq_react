@@ -1,8 +1,11 @@
 import React from "react";
-import ImgBarImgOne from "../../assets/WEB-MAMAQ-ecofriendly.png"
-import ImgBarImgTwo from "../../assets/WEB-MAMAQ-artesanal.png"
-import ImgBarImgThree from "../../assets/WEB-MAMAQ-homemade.png"
-import ImgBarImgFour from "../../assets/WEB-MAMAQ-petfriendly.png"
+import ImgBarImgOne from "../../../assets/WEB-MAMAQ-ecofriendly.png"
+import ImgBarImgTwo from "../../../assets/WEB-MAMAQ-artesanal.png"
+import ImgBarImgThree from "../../../assets/WEB-MAMAQ-homemade.png"
+import ImgBarImgFour from "../../../assets/WEB-MAMAQ-petfriendly.png"
+
+import "./styles.css"
+import "./styles_mq.css"
 
 const ImgBar = () => {
   return (

@@ -6,7 +6,10 @@ import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
 import { motion } from "framer-motion";
 
+import "./styles.css"
+
 const urlApi = `${API_URL}/api/auth/sign-in`;
+
 
 export const SigninForm = () => {
   const [errorMsg, setErrorMsg] = useState("");

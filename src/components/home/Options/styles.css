@@ -1,0 +1,48 @@
+.home-options-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-options-figure {
+    width: 35vh;
+    height: 46vh;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+}
+
+.home-options__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTONES DE OPTIONS */
+
+.home-options__a {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #ebebeb;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    color: #ebebeb;
+    cursor: pointer;
+    /* margin-bottom: 1.3rem; */
+    align-self: center;
+    position: absolute;
+    bottom: .8rem;
+    z-index: 800;
+}
+
+.home-options__a:hover {
+    background-color: #ebebeb;
+    color: #666;
+}

@@ -5,6 +5,8 @@ import { setUser } from "../../../actions";
 import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
 
+import "./styles.css"
+
 const urlApi = `${API_URL}/api/auth/sign-up`;
 
 export function SignUpForm() {

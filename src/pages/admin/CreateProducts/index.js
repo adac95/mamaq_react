@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import AdminProduct from "../../../components/admin/create-products/AdminProduct";
 import {CreateProductsForm} from "../../../components/admin/create-products/CreateProductsForm"
 
-import "../../styles/CreateProducts.css";
+import "./styles.css";
 export const CreateProducts = () => {
   const products = useSelector((state) => state.listProducts);
   return (

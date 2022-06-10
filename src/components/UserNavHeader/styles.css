@@ -1,12 +1,6 @@
 .header__datos-container {
-  /* width: 100%; */
-  /* height: 30px; */
-  /* display: flex; */
   justify-content: flex-end;
   align-items: center;
-  /* padding-right: 2rem; */
-  /* background-color: var(--header-color-mobile); */
-  /* color: var(--white-color); */
 }
 
 .datos__p {
@@ -38,17 +32,11 @@
 
   display:flex;
   cursor: pointer;
-  /* padding: .3rem 1rem; */
-  /* font-size: 1.2rem; */
   border-radius: 20px;
   background-color: transparent;
   color: var(--white-color);
   border: solid 1px #000;
   font-weight: 300;
-  /* line-height: 1.8; */
-  /* letter-spacing: 0.3rem; */
-
-
 }
 
 .datos__btn:hover {

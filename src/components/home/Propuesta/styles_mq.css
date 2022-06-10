@@ -1,0 +1,34 @@
+@media screen and (min-width: 426px) {
+  .propuesta-tittle__h3 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .propuesta__img-container {
+    width: 75%;
+    margin: auto;
+  }
+  .propuesta__video {
+    height: 60vh;
+    max-height: 500px;
+  }
+}
+
+@media screen and (min-width: 982px) {
+  .propuesta__img-video-container {
+    margin: auto;
+    flex-direction: row;
+  }
+  .propuesta__img-container {
+    width: 55%;
+  }
+  .propuesta__video-container {
+    width: 40%;
+    margin: auto;
+  }
+  .propuesta__video {
+    height: 60vh;
+    max-height: 500px;
+  }
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeaderLogo from "../assets/logo-mamaq2.png";
-import "../styles/Header.css";
-import "../styles/Header_MQ.css";
+import HeaderLogo from "../../assets/logo-mamaq2.png";
+import "./styles.css";
+import "./styles_mq.css";
 
 const Header = () => {
   const mobileNav = () => {

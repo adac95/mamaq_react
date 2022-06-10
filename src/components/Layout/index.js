@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../Header";
-import Footer from "../Footer"
+import Footer from "../Footer";
 import { useSelector } from "react-redux";
 import { UserNavHeader } from "../UserNavHeader";
 
-
 const Layout = ({ children }) => {
-  const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user);
   return (
     <div className='Main'>
-      <UserNavHeader user={user}/> 
+      <UserNavHeader user={user} />
       <Header />
       {children}
       <Footer />

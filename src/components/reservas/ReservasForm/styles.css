@@ -1,0 +1,49 @@
+.reserva__form {
+    /* width: auto; */
+    margin: auto;
+}
+.reserva__p {
+    font-size: 1.3rem;
+    color: var(--primary-color-opacity);
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.reserva__p--gris {
+    color: rgb(136, 132, 132);
+    text-align: center;
+    margin: -0.5rem auto;
+}
+
+.reserva__form-div {
+    border: solid 1px var(--primary-color-opacity);
+    padding: 1rem;
+}
+
+.reserva__label {
+    display: block;
+    margin-top: 1.3rem;
+    margin-bottom: .8rem;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+    color: var(--primary-color-opacity);
+}
+
+.reserva__input {
+    width: 100%;
+    border: none;
+    background-color: rgba(109, 99, 99, 0.062);
+    font-weight: 500;
+    padding: 1rem 0.8rem;
+}
+
+.reserva__input--submit {
+    font-family: var(--font-family);
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    background-color: #11f35c;
+    color: var(--primary-color)
+
+}

@@ -4,6 +4,8 @@ import { postForm } from "../../../../utils/postForm";
 import { API_URL } from "../../../../variables";
 import { setProducts } from "../../../../actions";
 
+import "./styles.css"
+
 export function CreateProductsForm() {
   const apiProducts = `${API_URL}/api/products`;
   const user = useSelector((state) => state.user);
@@ -70,7 +72,7 @@ export function CreateProductsForm() {
         />
       </label>
       <input
-        className='form__input form__input--submit'
+        className='form__input form__input--submit btn'
         type='submit'
         value='Crear item'
       />

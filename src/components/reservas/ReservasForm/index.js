@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles.css"
+
 const ReservasForm = () => {
   return (
     <form className='reserva__form'>

@@ -1,0 +1,48 @@
+.item-tr-fetch {
+    border: solid 1px #ffc107;
+    border-radius: 10px;
+    width: 100%;
+    margin: .5rem 0;
+    font-size: 1.5rem;
+}
+
+.item-tr__span{
+    display: flex;
+
+    justify-content: space-between;
+    margin: 1rem .5rem;
+}
+
+.item-tr__span--description {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item-image__img{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.item-tr__btn {
+    padding: .6rem 1.8rem;
+    color: var(--white-color);
+    border-radius: 6px;
+}
+
+.edit-btn {
+    background-color: #148b04;
+}
+.delete-btn {
+    background-color: #ca0d0d;
+}
+.item-tr__btn:hover{
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.edit-btn:hover {
+    background-color: #2baf53;
+}
+.delete-btn:hover {
+    background-color: #f51818;
+}

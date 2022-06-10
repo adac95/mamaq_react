@@ -2,9 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import OptionsImageOne from "../../assets/WEB-MAMAQ_BOX-1.jpg";
-import OptionsImageTwo from "../../assets/mamaq-reserva.jpg";
-import OptionsImageThree from "../../assets/WEB-MAMAQ_BOX-2.jpg";
+import OptionsImageOne from "../../../assets/WEB-MAMAQ_BOX-1.jpg";
+import OptionsImageTwo from "../../../assets/mamaq-reserva.jpg";
+import OptionsImageThree from "../../../assets/WEB-MAMAQ_BOX-2.jpg";
+
+import "./styles.css"
+import "./styles_mq.css"
 
 const Options = () => {
   return (

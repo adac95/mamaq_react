@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import BannerReservaImg from "../../assets/home-reservas.jpg";
+import BannerReservaImg from "../../../assets/home-reservas.jpg";
+
+import "./styles.css"
 
 const BannerReserva = () => {
   return (

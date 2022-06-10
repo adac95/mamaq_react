@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SliderImgOne from "../../assets/WEB-MAMAQ_BANNER-1.jpg";
-import SliderImgTwo from "../../assets/header1_mamaq.jpg";
-import SliderImgThree from "../../assets/WEB-MAMAQ_BANNER-2.jpg";
+import SliderImgOne from "../../../assets/WEB-MAMAQ_BANNER-1.jpg";
+import SliderImgTwo from "../../../assets/header1_mamaq.jpg";
+import SliderImgThree from "../../../assets/WEB-MAMAQ_BANNER-2.jpg";
+
+import "./styles.css"
+import "./styles_mq.css"
 
 const Slider = () => {
   let i = 0;

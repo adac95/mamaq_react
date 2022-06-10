@@ -1,7 +1,8 @@
 import React from "react";
-import "../../styles/Cart.css";
 import { API_URL } from "../../../variables";
-import { BtnToPatchProductOfCart } from "./BtnToPatchProductOfCart";
+import { BtnToPatchProductOfCart } from "../BtnToPatchProductOfCart";
+
+import "./styles.css";
 
 export const ProductOfCart = ({ product }) => {
   return (

@@ -33,7 +33,9 @@ html {
     outline: none;
     border: none
 }
-
+.btn:hover{
+    cursor: pointer;
+}
 .h3 {
     font-size: 3rem;
     display: inline-block;

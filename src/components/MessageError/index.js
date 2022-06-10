@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "../styles/ErrorMessage.css"
+import "./styles.css";
 
 export const MessageError = ({text}) => {
   return (

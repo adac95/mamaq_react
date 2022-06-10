@@ -6,14 +6,10 @@ import ImgBar from "../../components/home/ImgBar";
 import BannerReserva from "../../components/home/BannerReserva";
 import ContactForm from "../../components/home/ContactForm";
 
-import "../styles/Home.css";
-import "../styles/Home_MQ.css";
-
 const Home = () => {
-
   return (
-    <div className='Home'>
-      <section id='inicio' className='slider-section'>
+    <>
+      <section id='inicio'>
         <Slider />
         <Options />
       </section>
@@ -21,7 +17,7 @@ const Home = () => {
       <ImgBar />
       <BannerReserva />
       <ContactForm />
-    </div>
+    </>
   );
 };
 

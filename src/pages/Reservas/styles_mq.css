@@ -8,7 +8,4 @@
     .reserva-container {
         flex-direction: row;
     }
-    .reserva__mapa iframe {
-        width: 40vw;
-    }
 }

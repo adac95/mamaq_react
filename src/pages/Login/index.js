@@ -1,11 +1,12 @@
 import React from "react";
-import "../styles/Login.css";
-import { SigninForm } from "../components/admin/create-products/SigninForm";
-import { SignUpForm } from "../components/admin/create-products/SignUpForm";
+import { SigninForm } from "../../components/login/SigninForm";
+import { SignUpForm } from "../../components/login/SignupForm";
+
+import "./styles.css";
 
 export default function Login() {
   return (
-    <div className="Login-container">
+    <div className='Login-container'>
       <SigninForm />
       <SignUpForm />
     </div>

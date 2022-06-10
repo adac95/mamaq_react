@@ -1,0 +1,14 @@
+.img-bar {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    margin: 5px 0;
+    border: solid 1px #a1a0a065;
+}
+
+.img-bar__img {
+    display: inline-block;
+    min-width: 50px;
+    max-width: 100px;
+    padding: 10px;
+}

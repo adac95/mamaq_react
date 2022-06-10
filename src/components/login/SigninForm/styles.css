@@ -1,0 +1,111 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: center;
+  }
+  
+  /* .form-check {
+    margin-top: 0.5rem;
+    margin-bottom: 0.6rem;
+  } */
+  
+  .form__textfield-div {
+    width: 90%;
+    position: relative;
+  }
+  
+  .form__text-input {
+    padding: 18px 15px 8px 10px;
+    width: 100%;
+  }
+  
+  /* selector cuando el campo tiene texto*/
+  .form__text-input:valid {
+    background-color: rgb(232, 240, 254);
+    border: solid 1px #bcc6ce;
+  }
+  /* selector cuando al cargar la pagina tiene los campos llenos por defecto */
+  .form__text-input:-webkit-autofill + .form__text-label {
+    font-size: 1.2rem;
+    top: 4px;
+    color: #6c757d;
+  }
+  /* selector para cambiar el label al escribir en el input */
+  .form__text-input:focus-within + .form__text-label {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    top: 4px;
+    color: #6c757d;
+  }
+  .form__text-input:valid + .form__text-label {
+    font-size: 1.2rem;
+    top: 4px;
+    color: #6c757d;
+  }
+  /* labels de texto */
+  .form__text-label {
+    position: absolute;
+    z-index: 1;
+    color: #000;
+    font-size: 1.35rem;
+    top: 10px;
+    left: 10px;
+  }
+  
+  /* Check de recordar con clases de Framer */
+  .form__check-div {
+    width: 90%;
+    padding: 2px;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-size: 1.15rem;
+  }
+  .switch {
+    width: 40px;
+    height: 18px;
+    background-color: #ffc10776;
+    border: solid 1px #bcc6ce;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 50px;
+    padding: 2px;
+    cursor: pointer;
+  }
+  
+  .switch[data-isOn="true"] {
+    justify-content: flex-end;
+    background-color: #ffc107;
+  }
+  
+  .handle {
+    width: 14px;
+  background-color: #fff;
+    border-radius: 40px;
+  }
+  
+  .form-check-label {
+    padding-bottom: 1px;
+  }
+  
+  /* btn */
+  
+  .form__btn {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ffffff;
+    padding: 5px;
+    letter-spacing: 0.3rem;
+    background-color: #ffc107;
+    border-radius: 3px;
+    width: 90%;
+  }
+  
+  .forget-container {
+    text-align: center;
+    margin-top: 0.3rem;
+    color: #6c757d;
+  }
+  

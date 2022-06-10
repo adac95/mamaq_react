@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { setCart } from "../../actions";
-import { postProduct } from "../../api/postProduct";
-import { API_URL } from "../../variables";
+import { setCart } from "../../../actions";
+import { postProduct } from "../../../api/postProduct";
+import { API_URL } from "../../../variables";
+import "./styles.css";
 
 export default function ProductCarta({ products }) {
   const user = useSelector((state) => state.user);

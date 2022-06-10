@@ -1,8 +1,11 @@
 import React from "react";
-import propuestaImgOne from "../../assets/pirqa_sandwich-1.jpg"
-import propuestaImgTwo from "../../assets/veggie_clasica.jpg"
-import propuestaImgThree from "../../assets/salteados.jpg"
-import propuestaImgFour from "../../assets/solterito_dequinua.jpg"
+import propuestaImgOne from "../../../assets/pirqa_sandwich-1.jpg"
+import propuestaImgTwo from "../../../assets/veggie_clasica.jpg"
+import propuestaImgThree from "../../../assets/salteados.jpg"
+import propuestaImgFour from "../../../assets/solterito_dequinua.jpg"
+
+import "./styles.css"
+import "./styles_mq.css"
 
 const Propuesta = () => {
   return (

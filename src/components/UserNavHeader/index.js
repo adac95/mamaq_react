@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setCart, setUser } from "../actions";
+import { setCart, setUser } from "../../actions";
 
-// import "../styles/UserNavHeader.css";
-import { deleteCookie } from "../utils/deleteCookie";
+import "./styles.css"
+import { deleteCookie } from "../../utils/deleteCookie";
 
 export const UserNavHeader = ({ user }) => {
   const dispatch = useDispatch();

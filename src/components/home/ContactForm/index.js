@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles.css"
+
 const ContactForm = () => {
   return (
     <section className='contacto' id='contacto'>

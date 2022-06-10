@@ -1,6 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setReservasMap } from "../../actions";
+import { setReservasMap } from "../../../actions";
+
+import "./styles.css"
+import "./styles_mq.css"
 
 const ReservasMap = () => {
   const dispatch = useDispatch();
