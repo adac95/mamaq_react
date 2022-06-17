@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setEditInputValue,
@@ -9,7 +9,7 @@ import { patchProducts } from "../../../../api/patchProducts";
 import { deleteProduct } from "../../../../api/deleteProduct";
 import { API_URL } from "../../../../variables";
 
-import "./styles.css"
+import "./styles.css";
 
 export default function AdminProduct({ product, id }) {
   const editProductsBtn = useSelector((state) => state.editProductsBtn);
@@ -136,7 +136,12 @@ export default function AdminProduct({ product, id }) {
         <th className='tr-fetch__th'>Categoria</th>
         <td className='item-category'>
           {editProductsBtn.isTrue && editProductsBtn.id === product._id ? (
-            <select className='item-category'>
+            <select
+              className='item-category'
+              name="category"
+              onChange={inputValueHandler}
+              value={editInputValue.category}
+            >
               <option value='Carnivoro'>Carnivoro</option>
               <option value='Vegetariano'>Vegetariano</option>
               <option value='Vegano'>Vegano</option>
