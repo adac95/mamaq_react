@@ -4,7 +4,7 @@ import FooterLogo from "../../assets/logo-blanco-1024x724.png";
 import "./styles.css";
 import "./styles_mq.css";
 
-const Footer = () => {
+const Footer = React.memo(() => {
   return (
     <div className='Footer'>
       <footer className='footer'>
@@ -18,7 +18,7 @@ const Footer = () => {
             <span className='footer__redes--span'>
               <a
                 href='https://www.facebook.com/MAMAQecocafe/'
-                rel='noopener'
+                rel='noreferrer noopener'
                 target='_blank'
                 className='a footer__a-redes'
               >
@@ -61,7 +61,7 @@ const Footer = () => {
 
               <a
                 href='https://www.instagram.com/MAMAQecocafe/'
-                rel='noopener'
+                rel='noreferrer noopener'
                 target='_blank'
                 className='footer__a-redes'
               >
@@ -80,7 +80,7 @@ const Footer = () => {
 
               <a
                 href='https://wa.me/51989070874'
-                rel='noopener'
+                rel='noreferrer noopener'
                 target='_blank'
                 className='footer__a-redes'
               >
@@ -133,6 +133,6 @@ const Footer = () => {
       </span>
     </div>
   );
-};
+});
 
 export default Footer;

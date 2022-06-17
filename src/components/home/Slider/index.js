@@ -28,7 +28,7 @@ const Slider = () => {
   return (
     <div className='slides-container'>
       <div className='slide slide-active slide-one'>
-        <img className='slide__img' src={SliderImgOne} />
+        <img className='slide__img' src={SliderImgOne} alt='imagen de banner publicitario' />
         <a
           href='https://wa.me/51989070874'
           rel='noopener noreferrer'
@@ -39,13 +39,13 @@ const Slider = () => {
         </a>
       </div>
       <div className='slide slide-two'>
-        <img className='slide__img' src={SliderImgTwo} />
+        <img className='slide__img' src={SliderImgTwo} alt='imagen de banner publicitario' />
         <Link to='/reservas' className='a slide__btn slide__btn-two'>
           Reserva aquí!
         </Link>
       </div>
       <div className='slide slide-three'>
-        <img className='slide__img' src={SliderImgThree} />
+        <img className='slide__img' src={SliderImgThree} alt='imagen de banner publicitario' />
       </div>
       <div className='slide-btn-arrow-container'>
         <button

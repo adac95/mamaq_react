@@ -4,7 +4,7 @@ import HeaderLogo from "../../assets/logo-mamaq2.png";
 import "./styles.css";
 import "./styles_mq.css";
 
-const Header = () => {
+const Header = React.memo(() => {
   const mobileNav = () => {
     const $nav = document.getElementById("navHeader");
 
@@ -131,6 +131,5 @@ const Header = () => {
       </header>
     </div>
   );
-};
-
-export default Header;
+});
+export default Header
