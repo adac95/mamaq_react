@@ -138,7 +138,7 @@ export default function AdminProduct({ product, id }) {
           {editProductsBtn.isTrue && editProductsBtn.id === product._id ? (
             <select
               className='item-category'
-              name="category"
+              name='category'
               onChange={inputValueHandler}
               value={editInputValue.category}
             >
