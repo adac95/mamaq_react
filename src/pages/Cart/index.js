@@ -5,8 +5,8 @@ import {ProductOfCart} from "../../components/cart/ProductOfCart";
 import "./styles.css";
 
 export const Cart = () => {
-  const cartCounter = useSelector((state) => state.cartCounter);
-  const cart = useSelector((state) => state.cart);
+  const cartCounter = useSelector((state) => state.products.cartCounter);
+  const cart = useSelector((state) => state.products.cart);
 
   return (
     <section className='cart-section'>

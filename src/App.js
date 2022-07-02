@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-import "./styles/Generales.css";
-
 import Home from "./pages/Home";
 import Reservas from "./pages/Reservas";
 import Layout from "./components/Layout";
@@ -13,13 +10,15 @@ import { CreateProducts } from "./pages/admin/CreateProducts";
 import { Cart } from "./pages/Cart";
 import { AdminHome } from "./pages/admin/AdminHome";
 import { useDispatch } from "react-redux";
-import { setCart, setProducts } from "./actions";
+import { setCart, setProducts } from "./redux/productsReducer";
 import GetProducts from "./api/getProducts";
 import Login from "./pages/Login";
 import { getCartByUser } from "./api/getCartByUser";
 
+import "./styles/Generales.css";
+
 function App() {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.products.user);
   const dispatch = useDispatch();
   useEffect(() => {
     GetProducts().then((res) => {

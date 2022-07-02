@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setUser } from "../actions";
+import { setUser } from "../redux/productsReducer";
 
 // AUN NO LOGRO HACER QUE FUNCIONE EN SIGNIN Y SIGNUP FORMS
 

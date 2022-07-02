@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCart } from "../../../actions";
+import { setCart } from "../../../redux/productsReducer";
 import { patchCart } from "../../../api/cart/patchCart";
 import { API_URL } from "../../../variables";
 
 export const BtnToPatchProductOfCart = ({ content, className, product }) => {
-  const user = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.products.user);
+  const cart = useSelector((state) => state.products.cart);
   const dispatch = useDispatch();
   const handlePatchClick = async () => {
     try {

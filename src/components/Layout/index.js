@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { UserNavHeader } from "../UserNavHeader";
 
 const Layout = ({ children }) => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.products.user);
   return (
     <div className='Main'>
       <UserNavHeader user={user} />

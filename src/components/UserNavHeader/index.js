@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setCart, setUser } from "../../actions";
+import { setCart, setUser } from "../../redux/productsReducer";
 
 import "./styles.css"
 import { deleteCookie } from "../../utils/deleteCookie";
 
 export const UserNavHeader = ({ user }) => {
   const dispatch = useDispatch();
-  const cartCounter = useSelector((state) => state.cartCounter);
+  const cartCounter = useSelector((state) => state.products.cartCounter);
 
   const logoutHandle = async () => {
     try {

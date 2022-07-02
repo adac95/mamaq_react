@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { API_URL } from "../../../variables";
-import { setUser } from "../../../actions";
+import { setUser } from "../../../redux/productsReducer";
 import { postForm } from "../../../utils/postForm";
 import { MessageError } from "../../MessageError";
 import { motion } from "framer-motion";

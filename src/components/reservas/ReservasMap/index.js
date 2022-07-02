@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setReservasMap } from "../../../actions";
+import { setReservasMap } from "../../../redux/productsReducer";
+
 
 import "./styles.css"
 import "./styles_mq.css"
 
 const ReservasMap = () => {
   const dispatch = useDispatch();
-  const reservasMap = useSelector((state) => state.reservasMap);
+  const reservasMap = useSelector((state) => state.products.reservasMap);
 
   function handleResponsiveMap() {
     dispatch(setReservasMap(true));

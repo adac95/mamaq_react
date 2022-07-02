@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCart } from "../../../actions";
+import { setCart } from "../../../redux/productsReducer";
 import { postProduct } from "../../../api/postProduct";
 import { API_URL } from "../../../variables";
 import "./styles.css";
 
 export default function ProductCarta({ products }) {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.products.user);
   const dispatch = useDispatch();
 
   return (

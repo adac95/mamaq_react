@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { postForm } from "../../../../utils/postForm";
 import { API_URL } from "../../../../variables";
-import { setProducts } from "../../../../actions";
+import { setProducts } from "../../../../redux/productsReducer";
 
 import "./styles.css"
 
 export function CreateProductsForm() {
   const apiProducts = `${API_URL}/api/products`;
-  const user = useSelector((state) => state.user);
-  const products = useSelector((state) => state.listProducts);
+  const user = useSelector((state) => state.products.user);
+  const products = useSelector((state) => state.products.listProducts);
   const dispatch = useDispatch();
 
   return (

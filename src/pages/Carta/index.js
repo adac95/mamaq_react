@@ -5,7 +5,7 @@ import ProductCarta from "../../components/carta/ProductCarta";
 
 
 function Carta() {
-  const listProducts = useSelector((state) => state.listProducts);
+  const listProducts = useSelector((state) => state.products.listProducts);
 
   return <ProductCarta products={listProducts} />;
 }

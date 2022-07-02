@@ -6,7 +6,7 @@ import {CreateProductsForm} from "../../../components/admin/create-products/Crea
 
 import "./styles.css";
 export const CreateProducts = () => {
-  const products = useSelector((state) => state.listProducts);
+  const products = useSelector((state) => state.products.listProducts);
   return (
     <div>
       <section className='create-item-section'>

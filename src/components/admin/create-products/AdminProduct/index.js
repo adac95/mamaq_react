@@ -4,7 +4,7 @@ import {
   setEditInputValue,
   setEditProductsBtn,
   setProducts,
-} from "../../../../actions";
+} from "../../../../redux/productsReducer";
 import { patchProducts } from "../../../../api/patchProducts";
 import { deleteProduct } from "../../../../api/deleteProduct";
 import { API_URL } from "../../../../variables";
@@ -12,10 +12,10 @@ import { API_URL } from "../../../../variables";
 import "./styles.css";
 
 export default function AdminProduct({ product, id }) {
-  const editProductsBtn = useSelector((state) => state.editProductsBtn);
-  const editInputValue = useSelector((state) => state.editInputValue);
-  const products = useSelector((state) => state.listProducts);
-  const user = useSelector((state) => state.user);
+  const editProductsBtn = useSelector((state) => state.products.editProductsBtn);
+  const editInputValue = useSelector((state) => state.products.editInputValue);
+  const products = useSelector((state) => state.products.listProducts);
+  const user = useSelector((state) => state.products.user);
   const dispatch = useDispatch();
 
   const imagenInput = useRef();

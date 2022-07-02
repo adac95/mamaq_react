@@ -1,12 +1,4 @@
-import {
-  SET_CART,
-  SET_CART_COUNTER,
-  SET_EDIT_INPUT_VALUE,
-  SET_EDIT_PRODUCTS_BTN,
-  SET_PRODUCTS,
-  SET_RESERVASMAP,
-  SET_USER,
-} from "../actions/types";
+import { createSlice } from "@reduxjs/toolkit";
 import { getCookie } from "../utils/getCookie";
 
 const initialState = {
@@ -32,33 +24,48 @@ const initialState = {
   cartCounter: 0,
 };
 
-const productsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_PRODUCTS:
+const productsSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers: {
+    setProducts: (state, action) => {
       return { ...state, listProducts: action.payload };
-    case SET_RESERVASMAP:
+    },
+    setReservasMap: (state, action) => {
       return { ...state, reservasMap: action.payload };
-    case SET_EDIT_PRODUCTS_BTN:
+    },
+    setEditProductsBtn: (state, action) => {
       return { ...state, editProductsBtn: action.payload };
-    case SET_EDIT_INPUT_VALUE:
+    },
+
+    setEditInputValue: (state, action) => {
       return { ...state, editInputValue: { ...action.payload } };
-    case SET_USER:
+    },
+    setUser: (state, action) => {
       return { ...state, user: { ...action.payload } };
-    case SET_CART:
-      let total = 0
-      if(action.payload.products){
-        action.payload.products.forEach(el => {
-          total += el.cantidad
-          return total
-        })
-        // initialState.cartCounter= total
+    },
+    setCart: (state, action) => {
+      let total = 0;
+      if (action.payload.products) {
+        action.payload.products.forEach((el) => {
+          total += el.cantidad;
+          return total;
+        });
       }
       return { ...state, cart: { ...action.payload }, cartCounter: total };
-    case SET_CART_COUNTER:
+    },
+    setCartCounter: (state, action) => {
       return { ...state, cartCounter: action.payload };
-    default:
-      return { ...state };
-  }
-};
-
-export default productsReducer;
+    },
+  },
+});
+export const {
+  setProducts,
+  setReservasMap,
+  setEditProductsBtn,
+  setEditInputValue,
+  setUser,
+  setCart,
+  setCartCounter,
+} = productsSlice.actions;
+export default productsSlice.reducer;
